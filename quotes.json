@@ -25,8 +25,18 @@
       "contributor":"mildthrone"
    },
    {
-   "name":"Buddha",
-   "quote":"Peace comes from within. Do not seek it without"
-   "contributor":"makpalu"
+     "name":"Buddha",
+     "quote":"Peace comes from within. Do not seek it without"
+     "contributor":"makpalu"
+   },
+   {
+     "name" : "Maya Angelou",
+      "quote" : "Still I Rise",
+      "contributor": "El-Karece" 
+   },
+   {
+      "name": "Confucius",
+      "quote": "The beginning of wisdom is calling things by their proper name",
+      "contributor": "Crispin"
    }
 ]
