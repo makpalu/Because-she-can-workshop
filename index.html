@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Because She Can – Quotes Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #c71585;
+    }
+    .quote-box {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .quote {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+    .author {
+      margin-top: 0.5rem;
+      text-align: right;
+      font-weight: bold;
+      color: #555;
+    }
+    .contributor {
+      text-align: right;
+      font-size: 0.8rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Because She Can – Quotes Gallery</h1>
+  <div id="quotes-container"></div>
+
+  <script>
+    fetch('quotes.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('quotes-container');
+        data.forEach(quote => {
+          const box = document.createElement('div');
+          box.className = 'quote-box';
+
+          box.innerHTML = `
+            <div class="quote">"${quote.quote}"</div>
+            <div class="author">– ${quote.name}</div>
+            <div class="contributor">Contributed by: ${quote.contributor}</div>
+          `;
+          container.appendChild(box);
+        });
+      })
+      .catch(error => {
+        console.error('Could not load quotes:', error);
+        document.getElementById('quotes-container').innerText = 'Error loading quotes.';
+      });
+  </script>
+
+</body>
+</html>
